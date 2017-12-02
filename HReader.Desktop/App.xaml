@@ -1,9 +1,23 @@
-﻿<Application x:Class="HReader.Desktop.App"
+﻿<Application x:Class="HReader.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:HReader.Desktop"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:HReader"
+             xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Amber.xaml" />
+                <ResourceDictionary>
+                    <local:Bootstrap x:Key="Bootstrap" />
+                </ResourceDictionary>
+                <!-- Include the Dragablz Material Design style -->
+                <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <!-- tell Dragablz tab control to use the Material Design theme -->
+            <Style TargetType="{x:Type dragablz:TabablzControl}" BasedOn="{StaticResource MaterialDesignTabablzControlStyle}" />
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

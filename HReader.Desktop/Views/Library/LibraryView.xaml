@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="HReader.Views.Library.LibraryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HReader.Views"
+             xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <ContentControl Grid.Row="1" Grid.ColumnSpan="3" x:Name="Page"/>
+        
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="SelectFirstAsync" fa:Awesome.Content="StepBackward" Style="{DynamicResource MaterialDesignFlatButton}" Padding="8"/>
+            <Button x:Name="SelectPreviousAsync" fa:Awesome.Content="CaretLeft" Style="{DynamicResource MaterialDesignFlatButton}" Padding="8"/>
+            <TextBlock x:Name="PageIndex" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <TextBlock Text="of" VerticalAlignment="Center" Margin="2"/>
+            <TextBlock x:Name="PageCount" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <Button x:Name="SelectNextAsync" fa:Awesome.Content="CaretRight" Style="{DynamicResource MaterialDesignFlatButton}" Padding="8"/>
+            <Button x:Name="SelectLastAsync"  fa:Awesome.Content="StepForward" Style="{DynamicResource MaterialDesignFlatButton}" Padding="8"/>
+        </StackPanel>
+
+        <ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" Width="50" x:Name="PageSelection" Style="{DynamicResource MaterialDesignFloatingHintComboBox}"/>
+    </Grid>
+</UserControl>

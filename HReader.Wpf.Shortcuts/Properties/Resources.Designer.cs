@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HReader.Properties {
-    using System;
+namespace HReader.Wpf.Shortcuts.Properties {
     
     
     /// <summary>
@@ -19,7 +18,7 @@ namespace HReader.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -38,8 +37,8 @@ namespace HReader.Properties {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HReader.Properties.Resources", typeof(Resources).Assembly);
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HReader.Wpf.Shortcuts.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

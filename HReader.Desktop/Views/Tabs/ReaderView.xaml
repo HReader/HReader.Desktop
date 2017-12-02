@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="HReader.Views.Tabs.ReaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HReader.Views"
+             xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+             xmlns:cal="http://www.caliburnproject.org"
+
+             cal:Message.Attach="[Event PreviewKeyDown] = [Action KeyPressAsync($eventArgs)]"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" KeyDown="UserControl_KeyDown">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Style x:Key="IconButtonStyle" TargetType="{x:Type ButtonBase}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
+                <Setter Property="Padding" Value="2 2 2 2"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5, 5, 5, 5" Orientation="Vertical" ZIndex="2">
+            <Button Width="32" Margin="2" fa:Awesome.Content="ArrowsH" ToolTip="Fit Horizontally" Click="FitHorizontally_Click" Style="{StaticResource IconButtonStyle}" Opacity="0.5"/>
+            <Button Width="32" Margin="2" fa:Awesome.Content="ArrowsV" ToolTip="Fit Vertically" Click="FitVertically_Click" Style="{StaticResource IconButtonStyle}" Opacity="0.5"/>
+            <Button Width="32" Margin="2" fa:Awesome.Content="Image" ToolTip="Original" Click="FitOriginal_Click" Style="{StaticResource IconButtonStyle}" Opacity="0.5"/>
+        </StackPanel>
+
+        <ProgressBar Height="32" Width="32" Margin="5"
+                     Style="{DynamicResource MaterialDesignCircularProgressBar}"
+                     IsIndeterminate="True"
+                     Visibility="{Binding LoadingVisible}"
+                     />
+        
+        <ScrollViewer x:Name="ScrollViewer">
+            <Grid MouseLeftButtonUp="Image_MouseLeftButtonUp" >
+                <Image Grid.Column="0"  x:Name="Image" Source="{Binding CurrentImage}" Stretch="None"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

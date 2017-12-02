@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HReader.Desktop
+namespace HReader.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ContentSourceView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ContentSourceView : UserControl
     {
-        public MainWindow()
+        public ContentSourceView()
         {
             InitializeComponent();
         }
